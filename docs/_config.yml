@@ -28,8 +28,9 @@ url: "https://au-imclab-git.github.io" # the base hostname & protocol for your s
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+#   - jekyll-feed
+markdown: GFM
 
 # Exclude from processing.
 # The following items will not be processed, by default.
