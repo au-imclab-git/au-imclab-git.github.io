@@ -1,5 +1,9 @@
 ---
 layout: home
+title: Home
+permalink: /
 ---
 
-# Welcome to the docs
+## Coming soon
+
+...
