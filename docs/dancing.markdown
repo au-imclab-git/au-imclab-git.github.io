@@ -20,17 +20,17 @@ The following table describes the different parts of the naming convention:
 |------|-------------|---------|---------|
 | `<what>` | What the file contains (Required). | all | either: `mocap` captured data, `questionnaire` for questionnaires, `ratingcont` subject continuous ratings, `rating` subject ratings |
 | `<pair-id>` | The pair id. This is the subject IDs together. | ratings, mocap | `L1F1` |
-| `<condition>` | The condition of the data. | ratings, mocap | `...` |
+| `<condition>` | The condition of the data. | ratings, mocap | `basic`, `free`, `open`, `closed`, `calibration`, `baseline` (solo) |
 | `<subject-id>` | The subject id, consisting of role: `L` for leader, `F` for follower, and a numeric ID. | general questionnaires, continuous ratings, subject ratings | `L1`, `F1` |
 | `<additional-information>` | Any additional information, including suffixes added by QTM, etc | all | `...` |
 | `<file-extension>` | The file extension. | all | `csv`, `xlsx`, `tsv`, `txt`, etc. |
 
 #### Examples
 
-- `mocap_L1F1_cond.csv`: Mocap data for the subjects `L1` and `F1`, where the leader is Leader 1 and the follower is Follower 1
-- `ratingcont_L1F1_cond_F1.csv`: Continuous ratings for the subjects `L1` and `F1`, where the rater is Follower 1 and the leader is Leader 1 and the follower is Follower 1
-- `questionnaire_L1F1_cond_L1.csv`: Questionnaire data for the subjects `L1` and `F1`, with answers from Leader 1 and the leader is Leader 1 and the follower is Follower 1
-- `questionnaire_F1.csv`: General questionnaire data for the subject `F1`, with answers from Follower 1
+- `mocap_L1F1_basic.csv`: Mocap data for the subjects `L1` and `F1` in the basic condition, where the leader is Leader 1 and the follower is Follower 1
+- `ratingcont_L1F1_free_F1.csv`: Continuous ratings for the subjects `L1` and `F1` in the free condition, where the rater is Follower 1 and the leader is Leader 1 and the follower is Follower 1
+- `questionnaire_L1F1_closed_L1.csv`: Questionnaire data for the subjects `L1` and `F1` in the closed condition, with answers from Leader 1 and the leader is Leader 1 and the follower is Follower 1
+- `questionnaire_F1.csv`: General questionnaire data for the subject `F1`, with answers from Follower 1 (no condition applies).
 
 
 
@@ -52,5 +52,15 @@ The directory structure is described in the following table:
 
 The data directory structure for all studies in the `Data storage and analysis/data/` folder should match the following:
 
-- `<study_name>`: currently there are `lindy_full` and `lindy_pilot`
+- `<study_name>`: currently there are `lindy_full` and `lindy_pilot`, `salsa_full` and `salsa_pilot`
+- `<study_name>/other`: consent forms, participant information, etc.
+- `<study_name>/prepared`: processed data, e.g. mocap data with the `mocap_` prefix, and other processed data
+- `<study_name>/QTM`: QTM project files, settings, etc. (not exported data)
+- `<study_name>/raw`: raw data, as *exported* from QTM, and other raw data
+- `<study_name>/raw/continuous_ratings`: continuous ratings data
+- `<study_name>/raw/general_questionnaires`: general questionnaire responses
+- `<study_name>/raw/mocap`: mocap data
+- `<study_name>/raw/music_features`: music features, e.g. beat, tempo, etc.
+- `<study_name>/raw/per_dance_questionnaires`: per dance questionnaire responses
+
 
